@@ -1,0 +1,11 @@
+require 'pry'
+
+require 'ruby-kong-auth/version'
+require 'ruby-kong-auth/request'
+require 'ruby-kong-auth/model'
+require 'ruby-kong-auth/spec'
+require 'ruby-kong-auth/stub'
+require 'ruby-kong-auth/utils'
+require 'ruby-kong-auth/kong_auth'
+require 'ruby-kong-auth/models/consumer'
+require 'ruby-kong-auth/models/key_auth'

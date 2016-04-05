@@ -1,0 +1,40 @@
+---
+engines:
+  bundler-audit:
+    enabled: true
+  duplication:
+    enabled: false
+    config:
+      languages:
+      - ruby
+      - javascript
+      - python
+      - php
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+    checks:
+      Rubocop/Metrics/ClassLength:
+        enabled: false
+      Rubocop/Style/NumericLiterals:
+        enabled: false
+      Rubocop/Style/FrozenStringLiteralComment:
+        enabled: false
+      Rubocop/Metrics/LineLength:
+        enabled: false
+      Rubocop/Metrics/MethodLength:
+        enabled: false
+
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
+  - "**.rb"
+exclude_paths:
+- spec/
