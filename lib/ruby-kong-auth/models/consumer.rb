@@ -5,9 +5,10 @@ module RubyKongAuth
     attr_accessor :id, :custom_id, :username, :created_at, :errors
     
     class << self
-      # Params: id
+      # Params: id or username
       #
       # Usage: RubyKongAuth::Consumer.find(id: 'xxx')
+      # Or: RubyKongAuth::Consumer.find(username: 'xxx')
       def find(*args)
         request = RubyKongAuth::Request::Consumer.retrieve args[0]
         if request.code == 200

@@ -4,8 +4,9 @@ module RubyKongAuth
       class << self
 
         def retrieve(*args)
+          resource = args[0][:id] || args[0][:username]
           path = RubyKongAuth.paths[:consumer][:retrieve]
-          path.gsub!(':id', args[0][:id])
+          path.gsub!(':id', resource)
           Request.get(path)
         end
 
