@@ -5,7 +5,8 @@ module RubyKongAuth
     def paths
       {
         :consumer     => {
-          :retrieve => '/consumers/:id'
+          :retrieve => '/consumers/:id',
+          :create   => '/consumers'
         },
         :key_auth     => {
           :list     => '/consumers/:consumer_id/key-auth',

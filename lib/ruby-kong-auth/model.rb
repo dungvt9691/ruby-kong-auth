@@ -6,8 +6,8 @@ module RubyKongAuth
       end
     end
 
-    def self.fields
-      self.attr_readers.map{|atr| atr.to_s}
+    def instance_values
+      Hash[instance_variables.map { |name| [name[1..-1], instance_variable_get(name)] }]
     end
 
     def to_sym

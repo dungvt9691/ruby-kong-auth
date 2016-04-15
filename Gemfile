@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'pry'
+gem "activesupport", '4.1.6'
 gem 'rake'
 gem "codeclimate-test-reporter", :group => :test, :require => nil
 gem 'ruby-kong', git: "git@github.com:tunglam14/ruby-kong.git"

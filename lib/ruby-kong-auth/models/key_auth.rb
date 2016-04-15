@@ -29,7 +29,7 @@ module RubyKongAuth
       def find(*args)
         request = RubyKongAuth::Request::KeyAuth.retrieve args[0]
         if request.code == 200
-          KeyAuth.new(KeyAuth.symbolize_keys!(request.body))
+          KeyAuth.new(symbolize_keys!(request.body))
         else
           nil
         end
@@ -60,7 +60,7 @@ module RubyKongAuth
 
         true
       else
-        KeyAuth.new(errors: [request.body['message']])
+        send("errors=", [request.body['message']])
         false
       end
     end
