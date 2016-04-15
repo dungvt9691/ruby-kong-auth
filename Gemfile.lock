@@ -1,10 +1,3 @@
-GIT
-  remote: git@github.com:tunglam14/ruby-kong.git
-  revision: eb2ea3ddfc181d02ec43d67c92f1dcf561fbe9f6
-  specs:
-    ruby-kong (0.1.0)
-      unirest (= 1.1.2)
-
 PATH
   remote: .
   specs:
@@ -83,7 +76,6 @@ DEPENDENCIES
   pry
   rake
   rspec (~> 3.0)
-  ruby-kong!
   ruby-kong-auth!
   webmock (= 1.24.2)
 

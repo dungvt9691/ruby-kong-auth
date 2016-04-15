@@ -40,7 +40,7 @@ module RubyKongAuth
           path = RubyKongAuth.paths[:consumer][:create]
           url  = RubyKongAuth::Utils.endpoint_builder(path)
 
-          RubyKong::Stub.request(
+          RubyKongAuth::Stub.request(
             :method   => :post,
             :url      => url,
             :request  => {
