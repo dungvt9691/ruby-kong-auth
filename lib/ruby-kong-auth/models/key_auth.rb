@@ -46,7 +46,7 @@ module RubyKongAuth
 
     # Create key auth
     # Required params: consumer_id
-    # Usage: key_auth RubyKongAuth::KeyAuth.new consumer_id: 'xxx'
+    # Usage: key_auth = RubyKongAuth::KeyAuth.new consumer_id: 'xxx'
     #        key_auth.save
     def save(*args)
       requires :consumer_id
