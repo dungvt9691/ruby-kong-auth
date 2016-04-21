@@ -8,7 +8,7 @@ describe RubyKongAuth::Consumer do
   it 'retrieve a consumer by id (/consumers/:id)' do
     RubyKongAuth::Request::Consumer::Stub.retrieve
 
-    object = RubyKongAuth::Consumer.find username: 'test_consumer'
+    object = RubyKongAuth::Consumer.find username: 'mailship_test'
 
     expect(object).not_to be_nil
   end
@@ -18,7 +18,7 @@ describe RubyKongAuth::Consumer do
 
     consumer_params = {
       custom_id: "08fcae40-e8ff-0133-faf6-245e60c56cb7",
-      username: "test_consumer"
+      username: "mailship_test"
     }
 
     object = RubyKongAuth::Consumer.new consumer_params

@@ -20,7 +20,7 @@ module RubyKongAuth
       class Stub
         def self.retrieve
           path = RubyKongAuth.paths[:consumer][:retrieve]
-          path.gsub!(":id", "test_consumer")
+          path.gsub!(":id", "mailship_test")
           url  = RubyKongAuth::Utils.endpoint_builder(path)
 
           request = RubyKongAuth::Stub.request(
@@ -29,7 +29,7 @@ module RubyKongAuth
             :response => {
               :status => 200,
               :body   => {
-                'username'   => 'test_consumer',
+                'username'   => 'mailship_test',
                 'created_at' => 1458789832000,
                 'id'         => "806a979f-75d5-49b3-9ef7-3869f8c3f882"
               }.to_json
@@ -47,14 +47,14 @@ module RubyKongAuth
             :request  => {
               :body => {
                 :custom_id => '08fcae40-e8ff-0133-faf6-245e60c56cb7',
-                :username => 'test_consumer'
+                :username => 'mailship_test'
               }
             },
             :response => {
               :status => 201,
               :body   => {
                 'custom_id'  => '08fcae40-e8ff-0133-faf6-245e60c56cb7',
-                'username'   => 'test_consumer',
+                'username'   => 'mailship_test',
                 'created_at' => 1458789832000,
                 'id'         => "806a979f-75d5-49b3-9ef7-3869f8c3f882"
               }.to_json
