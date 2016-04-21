@@ -51,13 +51,13 @@ module RubyKongAuth
                   {
                     "consumer_id" => "806a979f-75d5-49b3-9ef7-3869f8c3f882",
                     "created_at" => 1459571582000,
-                    "id" => "8c03b978-85a1-4872-86df-9fcc422b1149",
+                    "id" => "9f859d95-4db9-47e5-8ddd-a5eed3f5bd35",
                     "key" => "0c426c8c046d4f569c1d697858972cc8"
                   },
                   {
                     "consumer_id" => "806a979f-75d5-49b3-9ef7-3869f8c3f882",
                     "created_at" => 1459571509000,
-                    "id" => "47c55835-a855-4a57-a921-975359b922e8",
+                    "id" => "9f859d95-4db9-47e5-8ddd-a5eed3f5bd35",
                     "key" => "368dc176fe404629a35ebf2251fd5c73"
                   },
                 ],
