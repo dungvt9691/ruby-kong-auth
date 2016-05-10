@@ -67,7 +67,7 @@ module RubyKongAuth
 
     # Destroy key auth
     # Required params: consumer_id, :key_auth_id
-    # Usage: key_auth RubyKongAuth::KeyAuth.find consumer_id: 'xxx',
+    # Usage: key_auth = RubyKongAuth::KeyAuth.find consumer_id: 'xxx',
     #                                            key_auth_id: 'xxx'                                                
     #        key_auth.destroy
     def destroy(*args)

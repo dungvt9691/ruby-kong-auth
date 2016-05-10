@@ -6,7 +6,8 @@ module RubyKongAuth
       {
         :consumer     => {
           :retrieve => '/consumers/:id',
-          :create   => '/consumers'
+          :create   => '/consumers',
+          :destroy  => '/consumers/:id'
         },
         :key_auth     => {
           :list     => '/consumers/:consumer_id/key-auth',

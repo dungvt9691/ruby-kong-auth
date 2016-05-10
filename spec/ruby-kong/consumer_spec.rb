@@ -26,4 +26,14 @@ describe RubyKongAuth::Consumer do
     expect(object.save).to be true
   end
 
+  it 'destroy consumer (/consumers/:id)' do
+    RubyKongAuth::Request::Consumer::Stub.retrieve
+    RubyKongAuth::Request::Consumer::Stub.destroy
+
+    object = RubyKongAuth::Consumer.find username: 'mailship_test'
+
+    expect(object.destroy).to be true
+
+  end
+
 end

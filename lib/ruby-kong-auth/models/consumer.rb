@@ -40,6 +40,21 @@ module RubyKongAuth
       end
     end
 
+    # Destroy consumer
+    # Required params: username
+    # Usage: consumer = RubyKongAuth::Consumer.find username: 'xxx'
+    #        consumer.destroy
+    def destroy(*args)
+      request = RubyKongAuth::Request::Consumer.destroy username: self.username
+
+      if request.code == 204
+        true
+      else
+        self.errors = [request.body['message']]
+        false
+      end
+    end
+
     # Get consumer's keys auth
     # Usage: consumer  = RubyKongAuth::Consumer.find consumer_id: 'xxx'
     #        keys_auth = consumer.keys

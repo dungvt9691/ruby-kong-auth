@@ -31,7 +31,7 @@ describe RubyKongAuth::KeyAuth do
 
   end
 
-  it 'create key auth (/consumers/:consumer_id/key-auth)' do
+  it 'destroy key auth (/consumers/:consumer_id/key-auth/:id)' do
     RubyKongAuth::Request::KeyAuth::Stub.retrieve
     RubyKongAuth::Request::KeyAuth::Stub.destroy
 

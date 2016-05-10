@@ -15,6 +15,13 @@ module RubyKongAuth
           Request.post(path, args[0])
         end
 
+        def destroy(*args)
+          resource = args[0][:id] || args[0][:username]
+          path = RubyKongAuth.paths[:consumer][:destroy]
+          path.gsub!(':id', resource)
+          Request.delete(path, args[0])
+        end
+
       end
 
       class Stub
@@ -58,6 +65,21 @@ module RubyKongAuth
                 'created_at' => 1458789832000,
                 'id'         => "806a979f-75d5-49b3-9ef7-3869f8c3f882"
               }.to_json
+            }
+          )
+        end
+
+        def self.destroy
+          path = RubyKongAuth.paths[:consumer][:destroy]
+          path.gsub!(":id", "mailship_test")
+          url  = RubyKongAuth::Utils.endpoint_builder(path)
+
+          request = RubyKongAuth::Stub.request(
+            :method   => :delete,
+            :url      => url,
+            :response => {
+              :status => 204,
+              :body   => "".to_json
             }
           )
         end
