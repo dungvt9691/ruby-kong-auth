@@ -2,7 +2,6 @@ module RubyKongAuth
   module Request
     module Consumer
       class << self
-
         def retrieve(*args)
           resource = args[0][:id] || args[0][:username]
           path = RubyKongAuth.paths[:consumer][:retrieve]
@@ -21,70 +20,7 @@ module RubyKongAuth
           path.gsub!(':id', resource)
           Request.delete(path, args[0])
         end
-
       end
-
-      class Stub
-        def self.retrieve
-          path = RubyKongAuth.paths[:consumer][:retrieve]
-          path.gsub!(":id", "mailship_test")
-          url  = RubyKongAuth::Utils.endpoint_builder(path)
-
-          request = RubyKongAuth::Stub.request(
-            :method   => :get,
-            :url      => url,
-            :response => {
-              :status => 200,
-              :body   => {
-                'username'   => 'mailship_test',
-                'created_at' => 1458789832000,
-                'id'         => "806a979f-75d5-49b3-9ef7-3869f8c3f882"
-              }.to_json
-            }
-          )
-        end
-
-        def self.create
-          path = RubyKongAuth.paths[:consumer][:create]
-          url  = RubyKongAuth::Utils.endpoint_builder(path)
-
-          RubyKongAuth::Stub.request(
-            :method   => :post,
-            :url      => url,
-            :request  => {
-              :body => {
-                :custom_id => '08fcae40-e8ff-0133-faf6-245e60c56cb7',
-                :username => 'mailship_test'
-              }
-            },
-            :response => {
-              :status => 201,
-              :body   => {
-                'custom_id'  => '08fcae40-e8ff-0133-faf6-245e60c56cb7',
-                'username'   => 'mailship_test',
-                'created_at' => 1458789832000,
-                'id'         => "806a979f-75d5-49b3-9ef7-3869f8c3f882"
-              }.to_json
-            }
-          )
-        end
-
-        def self.destroy
-          path = RubyKongAuth.paths[:consumer][:destroy]
-          path.gsub!(":id", "mailship_test")
-          url  = RubyKongAuth::Utils.endpoint_builder(path)
-
-          request = RubyKongAuth::Stub.request(
-            :method   => :delete,
-            :url      => url,
-            :response => {
-              :status => 204,
-              :body   => "".to_json
-            }
-          )
-        end
-      end
-      
     end # end of Consumer
   end # End of Request
 end # End of RubyKongAuth
