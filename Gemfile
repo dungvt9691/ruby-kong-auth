@@ -7,3 +7,4 @@ gem 'pry'
 gem "activesupport", '4.1.6'
 gem 'rake'
 gem "codeclimate-test-reporter", :group => :test, :require => nil
+gem 'webmock', '1.24.2'
